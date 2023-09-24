@@ -1,0 +1,30 @@
+{% extends 'products/base.html'%}
+
+{% load static %}
+
+
+
+
+{% block map %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+{% endblock %}
+
+{% block content_contact%}
+    <div class="container-fluid bg-light py-5">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Contact Us</h1>
+            <p>
+                Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block Map %}
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4a4b68c957dc29daca05b622cc630e4b7becf304a2254fd4b267b8740c53c453&amp;width=1475&amp;height=603&amp;lang=ru_RU&amp;scroll=true"></script>
+<!--<div style="margin-bottom: 200px;"></div>-->
+{% endblock %}
+
+
+
