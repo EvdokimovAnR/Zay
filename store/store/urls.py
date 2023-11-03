@@ -15,17 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from products.views import index, shop, about, contact, shop_single, basket, basket_add, basket_remove, add_quantity_to_basket, remove_quantity_to_basket
-
+from users.views import registration
+from django.views.decorators.cache import cache_page
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('shop/', shop, name='shop'),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
+    path('registration/', registration, name='registration'),
     path('product/<int:product_id>/', shop_single, name='shop_single'),
     path('category/<int:category_id>/', shop, name='category'),
     path('page/<int:page_number>/', shop, name='paginator'),
@@ -35,8 +37,12 @@ urlpatterns = [
     path('add_quantity_to_basket/<int:basket_id>/', add_quantity_to_basket, name='add_quantity_to_basket'),
     path('remove_quantity_to_basket/<int:basket_id>/', remove_quantity_to_basket, name='remove_quantity_to_basket'),
 
+
 ]
 
 if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [path('__debug__/', include('debug_toolbar.urls'))] + urlpatterns
+
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

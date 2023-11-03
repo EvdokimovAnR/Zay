@@ -8,5 +8,5 @@ class TestIndex(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertIn('Главная', response.content.decode())
         # self.assertTemplateUsed(response, 'products/index.html')
-        a = 172772
+
 
