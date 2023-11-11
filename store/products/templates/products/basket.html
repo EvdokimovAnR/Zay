@@ -1,5 +1,6 @@
 
 
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -45,10 +46,10 @@
                             <a class="nav-link" href="{% url 'index'%}">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about'%}">О нас </a>
+                            <a class="nav-link" href="{% url 'about'%}">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'shop'%}">Магазин</a>
+                            <a class="nav-link" href="{% url 'shop'%}">Каталог</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'contact'%}">Контакты</a>
@@ -69,11 +70,11 @@
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="{% url 'basket' %}">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-<!--                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>-->
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{ total_quantity }}</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="{% url 'login' %}">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
                 </div>
             </div>

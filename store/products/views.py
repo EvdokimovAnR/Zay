@@ -58,6 +58,7 @@ def shop(request, category_id=None, page_number=1):
     return render(request, 'products/shop.html', context)
 
 
+
 def basket(request):
     baskets = Basket.objects.all()
     total_summa = 0

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'assets/css/login.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Авторизация</span></div>
+        <form action="{% url 'login'%}" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            {{ form.username }}
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            {{ form.password }}
+          </div>
+          <div class="pass"><a href="#">Забыли пароль?</a></div>
+          <div class="row button">
+            <input type="submit" value="Войти">
+          </div>
+          <div class="signup-link">Не зарегистрированы? <a href="{% url 'registration' %}">Зарегистрироваться</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
