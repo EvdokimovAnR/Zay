@@ -21,15 +21,27 @@ def index(request):
 
 
 def about(request):
+    baskets = Basket.objects.all()
+    total_quantity = 0
+    for basket in baskets:
+        total_quantity += basket.quantity
     context = {
-        'title': 'О нас'
+        'title': 'О нас',
+        'total_quantity': total_quantity,
+        'baskets': baskets
     }
     return render(request, 'products/about.html', context)
 
 
 def contact(request):
+    baskets = Basket.objects.all()
+    total_quantity = 0
+    for basket in baskets:
+        total_quantity += basket.quantity
     context = {
-        'title': 'Контакты'
+        'title': 'Контакты',
+        'total_quantity': total_quantity,
+        'baskets': baskets
     }
     return render(request, 'products/contact.html', context)
 
@@ -49,7 +61,7 @@ def shop(request, category_id=None, page_number=1):
     paginator = Paginator(products, per_page)
     products_paginator = paginator.page(page_number)
     context = {
-        'title': 'Товары ',
+        'title': 'Каталог ',
         'products': products_paginator,
         'categories': ProductCategory.objects.all(),
         'baskets': baskets,

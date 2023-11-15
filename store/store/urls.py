@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from products.views import index, shop, about, contact, shop_single, basket, basket_add, basket_remove, add_quantity_to_basket, remove_quantity_to_basket
-from users.views import registration, login
+from users.views import registration, login, profile
 from django.views.decorators.cache import cache_page
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('registration/', registration, name='registration'),
     path('login/', login, name='login'),
+    path('profile/', profile, name='profile'),
     path('product/<int:product_id>/', shop_single, name='shop_single'),
     path('category/<int:category_id>/', shop, name='category'),
     path('page/<int:page_number>/', shop, name='paginator'),

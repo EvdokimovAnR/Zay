@@ -11,7 +11,7 @@ body {
 .clearfix {
   content: "";
   display: table;
-  clear: both;	
+  clear: both;
 }
 
 #site-header, #site-footer {
@@ -364,4 +364,13 @@ a:hover {
 
 .added {
 	margin: 0 -50px 0 0 !important;
+}
+.login-button {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.login-button:hover {
+    background-color: black;
 }
