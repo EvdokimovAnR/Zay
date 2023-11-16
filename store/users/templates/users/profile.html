@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
 </head>
 <body>
+<form action="{% url 'profile'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
 <div class="container">
     <div class="main-body">
           <div class="row gutters-sm">
@@ -23,11 +25,18 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'assets/img/default_avatar.jpg '%} {% endif %}"  width="150">
                   </div>
+                    <div class="form-row mb-2">
+                    <div class="col-lg-12">
+                        <div class="custom-file">
+                            {{ form.image }}
+                            <label class="custom-file-label" >Выберите изображение</label>
+                        </div>
+                    </div>
+                </div>
                 </div>
               </div>
-
             </div>
             <div class="col-md-8">
               <div class="card mb-3">
@@ -37,60 +46,53 @@
                       <h6 class="mb-0 mt-2">Имя</h6>
                     </div>
                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name" value="Kenneth Valdez">
+<!--                        <input type="text" class="form-control" id="first_name" value="">-->
+                         {{ form.first_name}}
                      </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3 mt-3">
-                      <h6 class="mb-0">Фамилия</h6>
+                    <div class="row">
+                    <div class="col-sm-3 ">
+                      <h6 class="mb-0 mt-2">Фамилия</h6>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="last_name" value="Kenneth Valdez">
+<!--                        <input type="text" class="form-control" id="last_name" value="Евдокимов">-->
+                        {{ form.last_name }}
+                     </div>
+                  </div>
+                    <hr>
+                    <div class="row">
+                    <div class="col-sm-3 ">
+                      <h6 class="mb-0 mt-2">Имя пользователя</h6>
+                    </div>
+                    <div class="col-sm-9">
+<!--                        <input type="text" class="form-control" id="username" value="anton">-->
+                        {{ form.username}}
+                     </div>
+                  </div>
+                    <hr>
+                   <div class="row">
+                    <div class="col-sm-3 ">
+                      <h6 class="mb-0 mt-2">Адрес электронной почты</h6>
+                    </div>
+                    <div class="col-sm-9">
+<!--                        <input type="text" class="form-control" id="email" value="antonevdokimov47@gmail.com">-->
+                        {{ form.email}}
                      </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
+
+
+                  <div class="form-row">
+                    <div class="col-lg-12" style="margin-top: 33px;">
+                        <input class="btn btn-info btn-block" type="submit" value="Сохранить">
                     </div>
-                    <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div>
+                </div>
                 </div>
               </div>
-
-
-
-
             </div>
           </div>
-
         </div>
     </div>
+</form>
 </body>

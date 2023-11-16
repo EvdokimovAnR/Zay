@@ -31,11 +31,13 @@ class UserRegistrationForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
 
 
-# class UserProfileForm(UserChangeForm):
-#     first_name = forms.CharField(widget=forms.TextInput())
-#     last_name = forms.CharField(widget=forms.TextInput())
-#     image =
-#
-#     class Meta:
-#         model = User
-#         fields = {'first_name', 'last_name', 'image', 'username', 'email'}
+class UserProfileForm(UserChangeForm):
+    first_name = forms.CharField(widget=forms.TextInput())
+    last_name = forms.CharField(widget=forms.TextInput())
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'custom-file'}), required=False)
+    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
+    email = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
+
+    class Meta:
+        model = User
+        fields = {'first_name', 'last_name', 'image', 'username', 'email'}
