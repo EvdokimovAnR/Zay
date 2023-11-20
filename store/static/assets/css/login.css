@@ -12,7 +12,7 @@ body{
 ::selection{
   background: rgba(26,188,156,0.3);
 }
-.container{
+.container1{
   max-width: 440px;
   padding: 0 20px;
   margin: 170px auto;
@@ -107,3 +107,39 @@ form .button input:hover{
 form .signup-link a:hover{
   text-decoration: underline;
 }
+.navbar {
+  height: 80px; /* Установите нужную высоту шапки здесь */
+}
+/* Стили для сообщений об ошибках */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.error-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+

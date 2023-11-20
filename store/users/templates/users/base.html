@@ -2,11 +2,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Профиль</title>
+    <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'assets/css/profile.css' %}">
+
+    <link rel="apple-touch-icon" href="{% static 'assets/img/apple-icon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/templatemo.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
@@ -15,8 +19,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
 </head>
+
 <body>
- <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="{% url 'index'%}">
@@ -68,84 +74,7 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </nav>
-<form action="{% url 'profile'%}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-<div class="container">
-    <div class="main-body">
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                    <div class="text-center"><b>Фото</b></div>
-                  <div class="d-flex flex-column align-items-center text-center mb-0">
-                    <img src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'assets/img/default_avatar.jpg '%} {% endif %}"  width="260">
-                  </div>
-                    <div class="form-row mb-2">
-                    <div class="col-lg-12">
-                        <div class="custom-file text-center mt-3">
-                            {{ form.image }}
-                        </div>
-                    </div>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0 mt-2">Имя</h6>
-                    </div>
-                     <div class="col-sm-9">
-<!--                        <input type="text" class="form-control" id="first_name" value="">-->
-                         {{ form.first_name}}
-                     </div>
-                  </div>
-                  <hr>
-                    <div class="row">
-                    <div class="col-sm-3 ">
-                      <h6 class="mb-0 mt-2">Фамилия</h6>
-                    </div>
-                    <div class="col-sm-9">
-<!--                        <input type="text" class="form-control" id="last_name" value="Евдокимов">-->
-                        {{ form.last_name }}
-                     </div>
-                  </div>
-                    <hr>
-                    <div class="row">
-                    <div class="col-sm-3 ">
-                      <h6 class="mb-0 mt-2">Имя пользователя</h6>
-                    </div>
-                    <div class="col-sm-9">
-<!--                        <input type="text" class="form-control" id="username" value="anton">-->
-                        {{ form.username}}
-                     </div>
-                  </div>
-                    <hr>
-                   <div class="row">
-                    <div class="col-sm-3 ">
-                      <h6 class="mb-0 mt-2">Адрес электронной почты</h6>
-                    </div>
-                    <div class="col-sm-9">
-<!--                        <input type="text" class="form-control" id="email" value="antonevdokimov47@gmail.com">-->
-                        {{ form.email}}
-                     </div>
-                  </div>
-                  <hr>
-                  <div class="form-row">
-                    <div class="col-lg-12" style="margin-top: 33px;">
-                        <input class="btn btn-success btn-block" type="submit" value="Сохранить">
-                    </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-</form>
-</body>
+
+
