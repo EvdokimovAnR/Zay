@@ -10,12 +10,12 @@
   </head>
 
   <body>
-  <div class="container">
+  <div class="container1">
       <div class="row justify-content-center">
-          <div class="error-container">
+          <div class="error-container1">
+              <div class="col-lg-7">
               {% if messages or form.non_field_errors %}
-              <div class="alert{% if messages %} alert-success {% else %} alert-warning {% endif %} alert-dismissible fade show" role="alert"
-                   style="margin-top: 50px;">
+              <div class="alert {% if messages %} alert-success {% else %} alert-warning {% endif %} alert-dismissible fade show" role="alert">
                   {% if messages%}
                         {% for message in messages %}
                             {{ message}}
@@ -23,15 +23,16 @@
                   {% else%}
                         {{ form.non_field_errors}}
                   {% endif %}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<!--                      <span aria-hidden="true">&times;</span>-->
-                  </button>
               </div>
               {% endif %}
-    <div class="container1">
+              </div>
+          </div>
+      </div>
+
+<!--    <div class="container1">-->
       <div class="wrapper">
         <div class="title"><span>Авторизация</span></div>
-        <form action="{% url 'login'%}" method="POST">
+          <form action="{% url 'login'%}" method="POST">
           {% csrf_token %}
           <div class="row">
             <i class="fas fa-user"></i>
@@ -47,11 +48,8 @@
           </div>
           <div class="signup-link">Не зарегистрированы? <a href="{% url 'registration' %}">Зарегистрироваться</a></div>
         </form>
+
       </div>
     </div>
-                      </div>
-                  </div>
-    </div>
-
   </body>
 </html>

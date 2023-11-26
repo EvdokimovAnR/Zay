@@ -16,6 +16,7 @@ body{
   max-width: 440px;
   padding: 0 20px;
   margin: 170px auto;
+  background-color: white;
 }
 .wrapper{
   width: 100%;
@@ -107,9 +108,7 @@ form .button input:hover{
 form .signup-link a:hover{
   text-decoration: underline;
 }
-.navbar {
-  height: 80px; /* Установите нужную высоту шапки здесь */
-}
+
 /* Стили для сообщений об ошибках */
 .alert {
   padding: 15px;
@@ -136,10 +135,11 @@ form .signup-link a:hover{
   right: -21px;
   color: inherit;
 }
-.error-container {
+.error-container1 {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
+  background: white;
 }
 
