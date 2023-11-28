@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from products.views import index, shop, about, contact, shop_single, basket, basket_add, basket_remove, add_quantity_to_basket, remove_quantity_to_basket
 from users.views import registration, login, profile, logout
+from orders.views import order_create
 from django.views.decorators.cache import cache_page
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,11 +36,11 @@ urlpatterns = [
     path('category/<int:category_id>/', shop, name='category'),
     path('page/<int:page_number>/', shop, name='paginator'),
     path('basket/', basket, name='basket'),
+    path('order-create/', order_create, name='order_create'),
     path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
     path('baskets/remove/<int:basket_id>/', basket_remove, name='basket_remove'),
     path('add_quantity_to_basket/<int:basket_id>/', add_quantity_to_basket, name='add_quantity_to_basket'),
     path('remove_quantity_to_basket/<int:basket_id>/', remove_quantity_to_basket, name='remove_quantity_to_basket'),
-
 
 ]
 
