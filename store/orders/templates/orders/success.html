@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="{% static 'assets/css/success.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>Store - Спасибо за заказ!</title>
-    <link href="../vendor/css/auth.css" rel="stylesheet"/>
+    <title>Спасибо за заказ!</title>
+
+
 </head>
 <body class="bg-primary">
 <div id="layoutAuthentication">
@@ -20,10 +21,8 @@
                             <div class="card-header">
                                 <h3 class="text-center font-weight-light my-4">Спасибо за заказ!</h3>
                             </div>
-                            <div class="card-body text-center">
-                                <h4>
-                                    Ваш заказ успешно сформирован.
-                                </h4>
+                            <div class="card-body">
+                                <p class="success-message">Ваш заказ успешно сформирован</p>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 350px;
+  padding-right: 350px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-body {
+  margin-top: 20px;
+
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  color: #007bff;
+}
+.success-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+  color: #007bff;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 40%;
+    max-width: none;
+  }
+}
