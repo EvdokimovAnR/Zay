@@ -74,12 +74,15 @@ def shop(request, category_id=None, page_number=1):
 def basket(request):
     baskets = Basket.objects.all()
     total_summa = 0
+    total_quantity = 0
     for basket in baskets:
         total_summa += basket.summa()
+        total_quantity += basket.quantity
     context = {
         'title': 'Корзина товаров',
         'baskets': baskets,
         'total_summa': total_summa,
+        'total_quantity': total_quantity,
          }
     return render(request, 'products/basket.html', context)
 
