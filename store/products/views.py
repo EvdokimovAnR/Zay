@@ -7,12 +7,16 @@ from django.core.paginator import Paginator
 #Функции = контроллеры = вьюхи
 
 
-def index(request):
+def index(request, category_id=None):
     baskets = Basket.objects.all()
     total_quantity = 0
     for basket in baskets:
         total_quantity += basket.quantity
+    if category_id:
+        category = ProductCategory.objects.get(id=category_id)
+        products = Product.objects.filter(category=category)
     context = {
+        'categories': ProductCategory.objects.all(),
         'title': 'Главная',
         'total_quantity': total_quantity,
         'baskets': baskets
@@ -57,7 +61,7 @@ def shop(request, category_id=None, page_number=1):
     else:
         products = Product.objects.all()
     products = products
-    per_page = 6
+    per_page = 9
     paginator = Paginator(products, per_page)
     products_paginator = paginator.page(page_number)
     context = {
