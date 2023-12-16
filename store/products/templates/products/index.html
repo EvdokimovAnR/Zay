@@ -88,19 +88,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href=""><img src="{% static 'assets/img/сумкааа (1).jpg' %}" class="rounded-circle img-fluid border"></a>
+                <a><img src="{% static 'assets/img/сумкааа (1).jpg' %}" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Сумки</h5>
-                <p class="text-center"><a class="btn btn-success">Купить</a></p>
+                <a href="{% url 'category' category_id=5 %}" class="text-center d-block"><button class="btn btn-success">Купить</button></a>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="{% static 'assets/img/спорт коостюм (1).jpg' %}" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Спортивная одежда</h2>
-                <p class="text-center"><a class="btn btn-success">Купить</a></p>
+                <a href="{% url 'category' category_id=3 %}" class="text-center d-block"><button class="btn btn-success">Купить</button></a>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="{% static 'assets/img/category_img_03.jpg' %}" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Аксессуары</h2>
-                <p class="text-center"><a class="btn btn-success">Купить</a></p>
+                <h2 class="h5 text-center mt-3 mb-3">Солнцезащитные очки</h2>
+                <a href="{% url 'category' category_id=7 %}" class="text-center d-block"><button class="btn btn-success">Купить</button></a>
             </div>
         </div>
     </section>
@@ -111,18 +111,18 @@
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Featured Product</h1>
+                    <h1 class="h1"><b>Рекомендуемые продукты</b></h1>
                     <p>
-                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident.
+                        Мы тщательно отбираем эти товары, чтобы убедиться, что они соответствуют потребностям и ожиданиям наших клиентов.
+                        Мы уверены, что наши клиенты найдут в нашем списке рекомендуемых товаров что-то, что им понравится и будет соответствовать их ожиданиям.
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="{% static 'assets/img/feature_prod_01.jpg' %}" class="card-img-top" alt="...">
+                        <a href="{% url 'shop_single' product_id=4 %}">
+                            <img src="{% static 'assets/img/пальтоо.jpg' %}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
@@ -130,22 +130,20 @@
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
                                 </li>
-                                <li class="text-muted text-right">$240.00</li>
+                                <li class="text-muted text-right">2499,00 руб.</li>
                             </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Фонарик</a>
-                            <p class="card-text">
-                                Фонарик пригодится вам в темное время суток.
-                            </p>
+                            <a href="{% url 'shop_single' product_id=4 %}" class="h2 text-decoration-none text-dark">Paetki / Трикотажное пальто-кардиган</a>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="{% static 'assets/img/feature_prod_02.jpg' %}" class="card-img-top" alt="...">
+                        <a href="{% url 'shop_single' product_id=5 %}">
+                            <img src="{% static 'assets/img/жилетка м норм (1).jpg' %}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
@@ -153,22 +151,19 @@
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
                                 </li>
-                                <li class="text-muted text-right">480.00 руб.</li>
+                                <li class="text-muted text-right">2799,00 руб.</li>
                             </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Apple Watch SE </a>
-                            <p class="card-text">
-                                Современные часы для повседневной носки.
-                            </p>
+                            <a href="{% url 'shop_single' product_id=5 %}" class="h2 text-decoration-none text-dark">SKEIN / Модная жилетка для мужчин </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
-                            <img src="{% static 'assets/img/feature_prod_03.jpg' %}" class="card-img-top" alt="...">
+                        <a href="{% url 'shop_single' product_id=7 %}">
+                            <img src="{% static 'assets/img/пальто мужское норм (1).jpg' %}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
@@ -179,14 +174,12 @@
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
                                 </li>
-                                <li class="text-muted text-right">$360.00</li>
+                                <li class="text-muted text-right">8990,00 руб.</li>
                             </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">
-                                Камера Palaroid
+                            <a  href="{% url 'shop_single' product_id=7 %}" class="h2 text-decoration-none text-dark">
+                               Пальто от российского бренда "ГрандСтайл"
                             </a>
-                            <p class="card-text">
-                                Запечатлит все интересные моменты из вашей жизни.
-                            </p>
+
                         </div>
                     </div>
                 </div>

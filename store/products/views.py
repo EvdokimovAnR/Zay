@@ -12,11 +12,7 @@ def index(request, category_id=None):
     total_quantity = 0
     for basket in baskets:
         total_quantity += basket.quantity
-    if category_id:
-        category = ProductCategory.objects.get(id=category_id)
-        products = Product.objects.filter(category=category)
     context = {
-        'categories': ProductCategory.objects.all(),
         'title': 'Главная',
         'total_quantity': total_quantity,
         'baskets': baskets
